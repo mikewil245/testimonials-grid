@@ -1,0 +1,252 @@
+:root {
+  /*Primary colors*/
+  --moderateViolet: hsl(263, 55%, 52%);
+  --verydDarkGrayishBlue: hsl(217, 19%, 35%);
+  --VeryDarkBlackishBlue: hsl(219, 29%, 14%);
+  --White: hsl(0, 0%, 100%);
+
+  /* Neutral colors */
+
+  --Lightgray: hsl(0, 0%, 81%);
+  --Lightgrayishblue: hsl(210, 46%, 95%);
+}
+/* Box sizing rules */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* Remove default margin */
+body,
+h1,
+h2,
+h3,
+h4,
+p {
+  margin: 0;
+}
+
+/* Set body defaults */
+body {
+  background-color: var(--Lightgrayishblue);
+  font-size: 13px;
+  font-family: "Barlow Semi Condensed", sans-serif;
+  font-weight: 400;
+  /* min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;*/
+}
+
+/* Make images easier to work with */
+img,
+picture {
+  max-width: 100%;
+  display: block;
+}
+
+/* Inherit fonts for inputs and buttons */
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+/* styling articles*/
+.daniel-background {
+  background-color: var(--moderateViolet);
+}
+
+.john-background {
+  background-color: var(--verydDarkGrayishBlue);
+}
+
+.jean-background {
+  background-color: var(--White);
+}
+
+.pat-background {
+  background-color: var(--VeryDarkBlackishBlue);
+}
+
+.kira-background {
+  background-color: var(--White);
+}
+
+.profile-pictures {
+  width: 10%;
+  border-radius: 50%;
+  object-fit: contain;
+}
+
+.daniel-article,
+.johnathan-article,
+.patrick-article h1 {
+  color: white;
+}
+
+.kira-article h1 {
+  color: var(--verydDarkGrayishBlue);
+  width: 18.75rem;
+}
+
+.kira-article h3 {
+  color: var(--verydDarkGrayishBlue);
+}
+.profile-content p {
+  font-size: 0.8rem;
+  color: var(--Lightgray);
+  line-height: 1.5;
+}
+
+.Jeanette-article p {
+  color: var(--verydDarkGrayishBlue);
+}
+
+.kira-article p {
+  color: var(--verydDarkGrayishBlue);
+}
+
+.Jeanette-article h3 {
+  color: var(--verydDarkGrayishBlue);
+}
+
+.Jeanette-article h1 {
+  color: var(--verydDarkGrayishBlue);
+}
+
+h1 {
+  font-size: 1.2rem;
+  line-height: 1.1;
+  margin-bottom: 15px;
+}
+
+h3 {
+  /* color: var(--White);  change to white later*/
+  font-size: 1rem;
+}
+
+.profile-flex div {
+  color: var(--Lightgray); /* change color later*/
+}
+
+.profile-flex {
+  padding-bottom: 20px;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  position: relative; /* Make sure this is positioned relatively or absolutely */
+  z-index: 1; /* Place the text content on top of the pseudo-element */
+}
+
+/* Add positioning to .profile-content */
+.profile-content {
+  max-width: 18.74rem;
+  margin: 0 auto;
+  position: relative;
+  z-index: 2; /* Place .profile-content above the pseudo-element and text */
+}
+
+.profiile-name {
+  display: flex;
+  flex-direction: column;
+}
+
+/* Positoning the quotation mark*/
+.daniel-article {
+  position: relative;
+}
+
+.daniel-article::before {
+  content: "";
+  position: absolute;
+  top: 0%;
+  left: 55%;
+  width: 100px;
+  height: 100px;
+  background: url(images/bg-pattern-quotation.svg) center/cover no-repeat;
+  /* Place the pseudo-element behind the content of .daniel-article */
+}
+
+.grid-container {
+  margin: 40px auto;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 20px;
+}
+
+.all-articles {
+  padding: 25px 20px;
+  border-radius: 10px;
+
+  margin: 0 auto;
+  max-width: 100%; /* Ensure the grid doesn't overflow its container */
+}
+
+@media screen and (min-width: 768px) {
+  .grid-container {
+    width: 80%;
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .profile-content {
+    max-width: 100%;
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  .grid-container {
+    width: 95%;
+    max-width: 1400px;
+    gap: 25px;
+    grid-template-columns: repeat(4, minmax(300px, 1fr));
+  }
+  .all-articles {
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
+    line-height: 1.5;
+    max-width: 100%;
+  }
+
+  .profile-content p {
+    font-size: 1rem;
+  }
+
+  .daniel-article {
+    grid-column: span 2;
+  }
+  .patrick-article {
+    grid-column: span 2;
+  }
+
+  .kira-article {
+    grid-column: 4;
+    grid-row: 1 / span 2;
+  }
+
+  .daniel-article::before {
+    left: 68%;
+  }
+
+  h3 {
+    font-size: 0.8rem;
+  }
+
+  .profile-pictures {
+    width: 2.5rem;
+  }
+
+  .kira-article h1 {
+    font-size: 1.5rem;
+  }
+
+  h1 {
+    font-size: 2em;
+  }
+
+  .johnathan-article h1 {
+    font-size: 1.6rem;
+  }
+}
