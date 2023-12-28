@@ -197,7 +197,7 @@ h3 {
 @media screen and (min-width: 1200px) {
   .grid-container {
     max-width: 1400px;
-    margin: 80px auto;
+    margin: 100px auto;
     place-content: center;
     gap: 25px;
     grid-template-columns: repeat(4, minmax(300px, 1fr));
