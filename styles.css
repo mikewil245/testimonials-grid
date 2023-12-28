@@ -145,7 +145,6 @@ h3 {
 /* Add positioning to .profile-content */
 .profile-content {
   max-width: 18.74rem;
-  margin: 0 auto;
   position: relative;
   z-index: 2; /* Place .profile-content above the pseudo-element and text */
 }
@@ -172,16 +171,14 @@ h3 {
 }
 
 .grid-container {
-  margin: 40px auto;
   display: grid;
-  grid-template-columns: 1fr;
+  grid-template-columns: repeat(100px, 1fr);
   gap: 20px;
 }
 
 .all-articles {
   padding: 25px 20px;
   border-radius: 10px;
-
   margin: 0 auto;
   max-width: 100%; /* Ensure the grid doesn't overflow its container */
 }
@@ -199,8 +196,9 @@ h3 {
 
 @media screen and (min-width: 1200px) {
   .grid-container {
-    width: 95%;
     max-width: 1400px;
+    margin: 80px auto;
+    place-content: center;
     gap: 25px;
     grid-template-columns: repeat(4, minmax(300px, 1fr));
   }
